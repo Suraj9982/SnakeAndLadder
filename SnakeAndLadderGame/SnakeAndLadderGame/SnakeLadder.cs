@@ -10,9 +10,10 @@ namespace SnakeAndLadderGame
     {
         public int Player_Position = 0;
         Random random = new Random();
-        public void dieroll()
+        public int dieroll()
         {
             int dienumber = random.Next(1, 7);
+            return dienumber;
         }
     }
 }
