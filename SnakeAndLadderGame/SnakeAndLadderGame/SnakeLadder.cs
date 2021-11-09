@@ -29,6 +29,10 @@ namespace SnakeAndLadderGame
                         break;
                     case LADDER:
                         this.Player_Position += dienumber;
+                        if (Player_Position > 100)
+                        {
+                            this.Player_Position -= dienumber;
+                        }
                         break;
                     case SNAKE:
                         this.Player_Position -= dienumber;
