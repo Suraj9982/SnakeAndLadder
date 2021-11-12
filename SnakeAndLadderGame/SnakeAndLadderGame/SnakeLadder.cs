@@ -9,7 +9,7 @@ namespace SnakeAndLadderGame
     class SnakeLadder
     {
         public const int NO_PLAY = 0, LADDER = 1, SNAKE = 2,WIN=100,START_POINT=0;
-        public int Player_Position = 0;
+        public int player_position = 0;
         Random random = new Random();
         public int Dieroll()
         {
@@ -18,27 +18,27 @@ namespace SnakeAndLadderGame
         }
         public void GamePlay()
         {
-            while (Player_Position < 100)
+            while (player_position < 100)
             {
-                int dienumber = this.Dieroll();
+                int dicenumber = this.Dieroll();
                 int option = random.Next(0, 3);
                 switch (option)
                 {
                     case NO_PLAY:
-                        this.Player_Position += NO_PLAY;
+                        this.player_position += NO_PLAY;
                         break;
                     case LADDER:
-                        this.Player_Position += dienumber;
-                        if (Player_Position > 100)
+                        this.player_position += dicenumber;
+                        if (player_position > 100)
                         {
-                            this.Player_Position -= dienumber;
+                            this.player_position -= dicenumber;
                         }
                         break;
                     case SNAKE:
-                        this.Player_Position -= dienumber;
-                        if (Player_Position < START_POINT)
+                        this.player_position -= dicenumber;
+                        if (player_position < START_POINT)
                         {
-                            this.Player_Position = START_POINT;
+                            this.player_position = START_POINT;
                         }
                         break;
                     default:
@@ -46,7 +46,7 @@ namespace SnakeAndLadderGame
                         break;
                 }
             }
-            Console.WriteLine("player position is " + this.Player_Position);
+            Console.WriteLine("player position is " + this.player_position);
         }
     }
 }
