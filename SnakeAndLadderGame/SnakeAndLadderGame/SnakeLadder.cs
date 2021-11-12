@@ -9,16 +9,17 @@ namespace SnakeAndLadderGame
     class SnakeLadder
     {
         public const int NO_PLAY = 0, LADDER = 1, SNAKE = 2,WIN=100,START_POINT=0;
-        public int player_position = 0;
+        public int player_position = 0,count=0;
         Random random = new Random();
         public int Dieroll()
         {
+            count++;
             int dienumber = random.Next(1, 7);
             return dienumber;
         }
         public void GamePlay()
         {
-            while (player_position < 100)
+            while (player_position < WIN)
             {
                 int dicenumber = this.Dieroll();
                 int option = random.Next(0, 3);
@@ -47,6 +48,7 @@ namespace SnakeAndLadderGame
                 }
             }
             Console.WriteLine("player position is " + this.player_position);
+            Console.WriteLine("player rolls the dice till winning = " + count);
         }
     }
 }
